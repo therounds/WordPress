@@ -55,6 +55,19 @@ define('SECURE_AUTH_SALT', 'put your unique phrase here');
 define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
 
+$dbvalues = array('DB_HOST', 'DB_NAME', 'DB_USER', 'DB_PASSWORD');
+/** -------------------------------------------------------------*/
+foreach ($dbvalues as $dbvalue) {
+    define($dbvalue, getenv($dbvalue));
+}
+
+$saltykeys = array('AUTH_KEY', 'SECURE_AUTH_KEY', 'LOGGED_IN_KEY', 'NONCE_KEY', 'AUTH_SALT', 'SECURE_AUTH_SALT' , 'LOGGED_IN_SALT', 'NONCE_SALT' );
+/** -------------------------------------------------------------*/
+foreach ($saltykeys as $saltykey) {
+    define($saltykey, getenv($saltykey));
+}
+
+
 /**#@-*/
 
 /**
