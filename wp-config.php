@@ -36,6 +36,7 @@ foreach ($saltykeys as $saltykey) {
     define($saltykey, getenv($saltykey));
 }
 
+define("FS_METHOD", "direct");
 
 /**#@-*/
 
